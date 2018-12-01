@@ -14,4 +14,17 @@ The repository contains the following files:
 * run_analysis.R - the R code file used to create the data based on the requirements of the project. Detailed steps listed here
 * CodeBook.md - the code book accompaning the database which lists and describes the variables in the data 
 * tidy_data_mean.txt - is the output file using the original data provided in the source above and tranformed using the code in "run_analysi.R" to produce independent tidy data set with the average of each variable for each activity and each subject.
+* meanSport and std.Sport.txt which contain only the mean and standard deviation data of the readings of the source data.
 
+RUN_ANALYSIS.R
+
+In addition to the base package the script uses dplyr package
+The R script in the attached file performs the following opperations:
+
+1. Downloads and extracts the source files.
+2. Loads the files in R
+3. Organises and merges the different sets of data in one dataset
+4. Extracts the columns which contain mean and standard deviation readings in two text files called meanSport.txt and stdSport.txt respectively
+5. The script replaces the activity codes with activity names (descibed in the Code Book)
+6. The script expands on the label abbreviations with detailed descriptive labels.
+7. Creates a tidy database with means for each variable exported in tidy_data_mean.txt file
