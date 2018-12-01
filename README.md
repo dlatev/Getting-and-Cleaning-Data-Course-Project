@@ -18,8 +18,8 @@ The repository contains the following files:
 
 RUN_ANALYSIS.R
 
-In addition to the base package the script uses dplyr package
-The R script in the attached file performs the following opperations:
+The script uses dplyr package, in addition to the base package.
+It performs the following opperations:
 
 1. Downloads and extracts the source files.
 2. Loads the files in R
