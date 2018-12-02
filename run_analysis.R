@@ -55,7 +55,7 @@ mergeSports<-select(mergeSports,Subject,everything()) # move subject to be first
 
 ## extracting only mean and standard deviation measurements 
 
-meanstdSports<-grepl("Subject|ActivityDescription|mean|std", colnames(mergeSports))
+meanstdSports<-grepl("Subject|ActivityDescription|mean|Mean|std", colnames(mergeSports))
 mergeSports<-mergeSports[ ,meanstdSports]
 
 
