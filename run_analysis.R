@@ -1,4 +1,4 @@
-## course project
+## course project requirements
 ## 1) a tidy data set as described below, 
 ## 2) a link to a Github repository with your script for performing the analysis
 ## 3) a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md. 
@@ -49,16 +49,15 @@ test<-cbind(subject_test,Xy_test)
 
 mergeSports<-merge(train,test, all=TRUE)
 
-## extracting only mean and standard deviation measurements in two separate tables for ease or reading
-
-meanSports<-select(mergeSports,contains("mean"))
-names(meanSports)
-stdSports<-select(mergeSports,contains("std"))
-names(stdSports)
-
-## use replace activitity codes with descriptive activity names as per ActivityLabels.txt
+## use replace activity codes with descriptive activity names as per ActivityLabels.txt
 mergeSports=merge(activity_labels,mergeSports)
 mergeSports<-select(mergeSports,Subject,everything()) # move subject to be first column
+
+## extracting only mean and standard deviation measurements 
+
+meanstdSports<-grepl("Subject|ActivityDescription|mean|std", colnames(mergeSports))
+mergeSports<-mergeSports[ ,meanstdSports]
+
 
 #label variables with descriptive names
 #replace t - time, f - frequency, Acc- Accelerometer, Gyro-Gyroscope, Mag - Magnitude,  Freq - Frequency, std - StandardDeviation, mean - Mean 
