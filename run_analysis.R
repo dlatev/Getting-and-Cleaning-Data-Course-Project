@@ -82,4 +82,4 @@ tidySports<-mergeSports%>%
         summarise_all(mean)
 ## write the output 
 
-write.table(tidySports, "tidy_data_mean.txt", quote= FALSE)
+write.table(tidySports, "./data/tidy_data_mean.txt", quote= FALSE, row.name=FALSE)
